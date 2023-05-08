@@ -12,9 +12,9 @@ def autocomplete(food_pref, list_options):
 
 
 user_food_pref = "korea"
+suggestions_list = autocomplete(user_food_pref,types)
 
-if user_food_pref not in types:
-    suggestions_list = autocomplete(user_food_pref,types)
+if not ((user_food_pref in types) and (len(suggestions_list) == 1)):
     while suggestions_list:
         print("Oops, it looks like we do not have such cuisine around, did you mean: {0}".format(", ".join(suggestions_list)))
         user_food_pref= input("?\n")
