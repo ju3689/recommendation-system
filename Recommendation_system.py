@@ -18,14 +18,14 @@ def handle_input_and_choices(food_pref, list_options):
     
     if valid_choice:
         if len(suggestions_list) > 1:
-            food_pref=input("We have a few options for that ..! Which one specifically do you fancy ? : {0}", ", ".join(suggestions_list))
+            food_pref=input("We have a few options for that ..! Which one specifically do you fancy ? : {0} \n", ", ".join(suggestions_list))
             return handle_input_and_choices(food_pref, list_options)
     else:
         if len(suggestions_list) >= 1:
-            food_pref=input("Oops, it looks like you mistyped it, did you mean: {0}".format(", ".join(suggestions_list)))
+            food_pref=input("One more effort, did you mean: {0} ? \n".format(", ".join(suggestions_list)))
             return handle_input_and_choices(food_pref, list_options) 
         else:
-            food_pref = input("Tough one ... we do not have such type of cuisine around, try something else.")
+            food_pref = input("Tough one ... we do not have such type of cuisine around, try something else.\n")
             return handle_input_and_choices(food_pref, list_options) 
 
     return food_pref
@@ -34,7 +34,7 @@ def handle_input_and_choices(food_pref, list_options):
 
 
 
-user_food_pref = "korea"
+user_food_pref = "kore"
 handle_input_and_choices(user_food_pref, types)
 
 
