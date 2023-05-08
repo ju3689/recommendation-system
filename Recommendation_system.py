@@ -8,7 +8,7 @@ def autocomplete_list(food_pref, list_options):
 
     #lg = len(food_pref)
     possible_food_choices = [x for x in list_options if food_pref in x]
-    print("Possible food choices are ", ", ".join(possible_food_choices))
+    # print("Possible food choices are ", ", ".join(possible_food_choices))
     return possible_food_choices
 
 def handle_input_and_choices(food_pref, list_options):
@@ -35,7 +35,5 @@ def handle_input_and_choices(food_pref, list_options):
 
 
 user_food_pref = "kore"
-handle_input_and_choices(user_food_pref, types)
-
-
-valid_pref = user_food_pref
+valid_food_pref = handle_input_and_choices(user_food_pref, types)
+print("Got you! We're searching for {0} food now... hang tight!".format(valid_food_pref))
