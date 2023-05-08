@@ -7,11 +7,11 @@ from restaurantData import types, restaurant_data
 def autocomplete(food_pref, list_options):
 
     lg = len(food_pref)
-    possible_food_choices = [x for x in list_options if food_pref in x[:lg]]
+    possible_food_choices = [x for x in list_options if food_pref in x]
     return possible_food_choices
 
 
-user_food_pref = "aus"
+user_food_pref = "korea"
 
 if user_food_pref not in types:
     suggestions_list = autocomplete(user_food_pref,types)
