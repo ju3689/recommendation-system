@@ -30,10 +30,7 @@ def handle_input_and_choices(food_pref, list_options):
 
     return food_pref
 
-    
 
-
-
-user_food_pref = "kore"
+user_food_pref = "i"
 valid_food_pref = handle_input_and_choices(user_food_pref, types)
-print("Got you! We're searching for {0} food now... hang tight!".format(valid_food_pref))
+print("Got you! We're searching for {0} restaurants now... hang tight!".format(valid_food_pref))
