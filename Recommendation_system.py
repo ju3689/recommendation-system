@@ -6,8 +6,9 @@ from restaurantData import types, restaurant_data
 
 def autocomplete(food_pref, list_options):
 
-    lg = len(food_pref)
+    #lg = len(food_pref)
     possible_food_choices = [x for x in list_options if food_pref in x]
+    print("Possible food choices are, ", ", ".join(possible_food_choices))
     return possible_food_choices
 
 
