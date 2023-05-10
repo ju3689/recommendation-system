@@ -16,6 +16,9 @@ def handle_input_and_choices(food_pref, list_options):
     valid_choice = False
     if food_pref in list_options: valid_choice = True
 
+    print(len(suggestions_list))
+    print(valid_choice)
+
     if len(suggestions_list) == 1 and valid_choice == False:
         user_confirm_choice =input("One more effort, did you mean: {0} ? Type \"Yes\" or \"No\" \n".format(", ".join(suggestions_list)))
         if user_confirm_choice == "Yes":
