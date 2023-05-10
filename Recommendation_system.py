@@ -49,6 +49,7 @@ def store_data_in_hasmap(table_data):
         price_rest = item[2]
         rating_rest = item[3]
         my_hash_map[rest_name] = [cuisine, price_rest, rating_rest]
+    return my_hash_map
     # print(my_hash_map.keys())
 
 def display_results(food_pref, hash_map):
