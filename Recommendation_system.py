@@ -13,10 +13,10 @@ def autocomplete_list(food_pref, list_options):
 
 def handle_input_and_choices(food_pref, list_options):
     suggestions_list = autocomplete_list(food_pref, list_options)
-    # valid_choice = False
-    # if food_pref in list_options: valid_choice = True
+    valid_choice = False
+    if food_pref in list_options: valid_choice = True
 
-    if len(suggestions_list) == 1:
+    if len(suggestions_list) == 1 and valid_choice == False:
         user_confirm_choice =input("One more effort, did you mean: {0} ? Type \"Yes\" or \"No\" \n".format(", ".join(suggestions_list)))
         if user_confirm_choice == "Yes":
             food_pref = suggestions_list[0]
