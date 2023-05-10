@@ -44,7 +44,12 @@ def handle_input_and_choices(food_pref, list_options):
 def store_data_in_hasmap(table_data):
     my_hash_map = {}
     for item in table_data:
-        print(item)
+        cuisine = item[0]
+        rest_name = item[1]
+        price_rest = item[2]
+        rating_rest = item[3]
+        my_hash_map[rest_name] = [cuisine, price_rest, rating_rest]
+    print(my_hash_map.keys())
 
 def display_results(hash_map):
     pass
