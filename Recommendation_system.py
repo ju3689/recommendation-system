@@ -21,7 +21,7 @@ def handle_input_and_choices(food_pref, list_options):
             food_pref=input("We have a few options for that ..! Which one specifically do you fancy ? : {0} \n", ", ".join(suggestions_list))
             return handle_input_and_choices(food_pref, list_options)
     else:
-        if len(suggestions_list) = 1:
+        if len(suggestions_list) == 1:
             user_confirm_choice =input("One more effort, did you mean: {0} ? Type \"Yes\" or \"No\" \n".format(", ".join(suggestions_list)))
             if user_confirm_choice == "Yes":
                  food_pref = suggestions_list[0]
