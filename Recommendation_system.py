@@ -26,7 +26,7 @@ def handle_input_and_choices(food_pref, list_options):
             if user_confirm_choice == "Yes":
                  food_pref = suggestions_list[0]
             elif user_confirm_choice == "No":
-                print("Ok let's try again.")
+                food_pref = input("Ok let's try again. What type of food do you fancy eating ?")
                 return handle_input_and_choices(food_pref, list_options)
             else:
                 print("Hmm does not seem like a valid input, let's try again")
