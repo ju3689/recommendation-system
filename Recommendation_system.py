@@ -26,11 +26,14 @@ def handle_input_and_choices(food_pref, list_options):
             if user_confirm_choice == "Yes":
                  food_pref = suggestions_list[0]
             elif user_confirm_choice == "No":
+                print("Ok let's try again.")
                 return handle_input_and_choices(food_pref, list_options)
             else:
                 print("Hmm does not seem like a valid input, let's try again")
                 return handle_input_and_choices(food_pref, list_options)
-
+        elif len(suggestions_list) > 1:
+            food_pref=input("We have a few options for that ..! Which one specifically do you fancy ? : {0} \n", ", ".join(suggestions_list))
+            return handle_input_and_choices(food_pref, list_options)
         else:
             food_pref = input("Tough one ... we do not have such type of cuisine around, try something else.\n")
             return handle_input_and_choices(food_pref, list_options) 
