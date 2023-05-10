@@ -1,5 +1,6 @@
 from restaurantData import types, restaurant_data
 
+
 # for item in types:
 #     print(item)
 
@@ -40,7 +41,17 @@ def handle_input_and_choices(food_pref, list_options):
 
     return food_pref
 
-print("Welcome to our restaurant finder service!")
-user_food_pref = input("What type of food do you fancy today ?\n")
-valid_food_pref = handle_input_and_choices(user_food_pref, types)
-print("Got you! We're searching for {0} restaurants now... hang tight!".format(valid_food_pref))
+def store_data_in_hasmap(table_data):
+    my_hash_map = {}
+    for item in table_data:
+        print(item)
+
+def display_results(hash_map):
+    pass
+
+# print("Welcome to our restaurant finder service!")
+# user_food_pref = input("What type of food do you fancy today ?\n")
+# valid_food_pref = handle_input_and_choices(user_food_pref, types)
+# print("Got you! We're searching for {0} restaurants now... hang tight!".format(valid_food_pref))
+my_hash_table = store_data_in_hasmap(restaurant_data)
+# display_results(my_hash_table)
