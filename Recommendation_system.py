@@ -18,7 +18,7 @@ def handle_input_and_choices(food_pref, list_options):
     
     if valid_choice:
         if len(suggestions_list) > 1:
-            food_pref=input("We have a few options for that ..! Which one specifically do you fancy ? : {0} \n", ", ".join(suggestions_list))
+            food_pref=input("Nice one! We have a few options for that ..! Which one specifically do you fancy ? : {0} \n", ", ".join(suggestions_list))
             return handle_input_and_choices(food_pref, list_options)
     else:
         if len(suggestions_list) == 1:
