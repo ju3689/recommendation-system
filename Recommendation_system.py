@@ -53,7 +53,7 @@ def store_data_in_hasmap(table_data):
 
 def display_results(food_pref, hash_map):
     shortlist_rest = {}
-    shortlist_rest = {k: v for k, v in hash_map.items() if v[0] = food_pref}
+    shortlist_rest = {k: v for k, v in hash_map.items() if v[0] == food_pref}
     # for key, value in hash_map.items():
     #     if value[0] == food_pref:
     #         shortlist_rest 
