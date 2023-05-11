@@ -44,24 +44,14 @@ def handle_input_and_choices(food_pref, list_options):
 #purpose is to store in a dictionary only the restaurants serving that type of food
 def store_data_in_hasmap(table_data, food_pref):
     my_hash_map = {}
-    #first we need to store all the restaurants data in a dictionary
     for item in table_data:
         if food_pref == item[0]:
             my_hash_map[item[1]] = [item[0], item[2], item[3], item[4]]
-    #     cuisine = item[0]
-    #     rest_name = item[1]
-    #     price_rest = item[2]
-    #     rating_rest = item[3]
-    #     address_rest = item[4]
-    #     my_hash_map[rest_name] = [cuisine, price_rest, rating_rest, address_rest]
-    # shortlist_rest = {}
-    # #then we want only the restaurants matching the cuisine type
-    # shortlist_rest = {k: v for k, v in my_hash_map.items() if v[0] == food_pref}
     
     return my_hash_map
 
+#displaying the list of restaurants nicely
 def display_results(shortlist_rest):
-    # print(food_pref, " has ", len(shortlist_rest), " restaurant entries matching")
     for k, v in shortlist_rest.items():
         print("---------------\n")
         print("Restaurant name: {0} \n".format(str(k)))
