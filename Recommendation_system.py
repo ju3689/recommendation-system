@@ -1,27 +1,25 @@
 from restaurantData import types, restaurant_data
 
-
-# for item in types:
-#     print(item)
-
-
+#autocomplete function that will take a user input and try to match it to an existing cuisine
 def autocomplete_list(food_pref, list_options):
 
-    #lg = len(food_pref)
+    #storing possible food choices that contains the string entered by the user
     possible_food_choices = [x for x in list_options if food_pref in x]
-    # print("Possible food choices are ", ", ".join(possible_food_choices))
     return possible_food_choices
 
+#handling inputs from the users
 def handle_input_and_choices(food_pref, list_options):
+    #collecting all matching cuisine in a list
     suggestions_list = autocomplete_list(food_pref, list_options)
     valid_choice = False
+    #if the user input already matches exactly a cuisine we have in our reference table, then the user choice is valid
     if food_pref in list_options: valid_choice = True
 
-    # print(len(suggestions_list))
-    # print(valid_choice)
-
+    #if user input is perfect match and only 1 cuisine is returned by our autocomplete list, then it's a no brainer
     if len(suggestions_list) == 1 and valid_choice == True: return food_pref
 
+    #if the user input is not valid, then we need to go through some use cases
+    #if there is only 1 cuisine that contains the string entered by the user, we want to check if the user meant that one
     if len(suggestions_list) == 1:
         user_confirm_choice =input("One more effort, did you mean: {0} ? Type \"Yes\" or \"No\" \n".format(", ".join(suggestions_list)))
         if user_confirm_choice == "Yes":
@@ -32,28 +30,35 @@ def handle_input_and_choices(food_pref, list_options):
         else:
             food_pref = input("Hmm does not seem like a valid input, let's try again. What type of food do you fancy eating ?\n")
             return handle_input_and_choices(food_pref, list_options)
+    #if there are more than 1 cuisine matching, we list them all and ask the user to input specifically the one they want
     elif len(suggestions_list) > 1:
         food_pref=input("We have a few options for that ..! Which one specifically do you fancy ? : {0} \n".format(", ".join(suggestions_list)))
         return handle_input_and_choices(food_pref, list_options)
+    #if no matches are found, we'll prompt the user to try another type of cuisine
     else:
         food_pref = input("Tough one ... we do not have such type of cuisine around, try something else.\n")
         return handle_input_and_choices(food_pref, list_options) 
 
     return food_pref
 
+#purpose is to store in a dictionary only the restaurants serving that type of food
 def store_data_in_hasmap(table_data, food_pref):
     my_hash_map = {}
+    #first we need to store all the restaurants data in a dictionary
     for item in table_data:
-        cuisine = item[0]
-        rest_name = item[1]
-        price_rest = item[2]
-        rating_rest = item[3]
-        address_rest = item[4]
-        my_hash_map[rest_name] = [cuisine, price_rest, rating_rest, address_rest]
-    shortlist_rest = {}
-    shortlist_rest = {k: v for k, v in my_hash_map.items() if v[0] == food_pref}
+        if food_pref == item[0]:
+            my_hash_map[item[1]] = [item[0], item[2], item[3], item[4]]
+    #     cuisine = item[0]
+    #     rest_name = item[1]
+    #     price_rest = item[2]
+    #     rating_rest = item[3]
+    #     address_rest = item[4]
+    #     my_hash_map[rest_name] = [cuisine, price_rest, rating_rest, address_rest]
+    # shortlist_rest = {}
+    # #then we want only the restaurants matching the cuisine type
+    # shortlist_rest = {k: v for k, v in my_hash_map.items() if v[0] == food_pref}
     
-    return shortlist_rest
+    return my_hash_map
 
 def display_results(shortlist_rest):
     # print(food_pref, " has ", len(shortlist_rest), " restaurant entries matching")
