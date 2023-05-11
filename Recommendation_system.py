@@ -57,8 +57,8 @@ def display_results(food_pref, hash_map):
     shortlist_rest = {k: v for k, v in hash_map.items() if v[0] == food_pref}
     for k, v in shortlist_rest.items():
         print("Restaurant name: {0} \n".format(str(k)))
-        print("Price: {0} \n".format(str(v[2])))
-        print("Rating: {0} \n".format(str(v[3])))
+        print("Price: {0} \n".format(str(v[1])))
+        print("Rating: {0} \n".format(str(v[2])))
         print("---------------\n")
 
 
