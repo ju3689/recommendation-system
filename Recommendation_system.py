@@ -55,9 +55,6 @@ def store_data_in_hasmap(table_data):
 def display_results(food_pref, hash_map):
     shortlist_rest = {}
     shortlist_rest = {k: v for k, v in hash_map.items() if v[0] == food_pref}
-    # for key, value in hash_map.items():
-    #     if value[0] == food_pref:
-    #         shortlist_rest 
     print(shortlist_rest.keys())
 
 print("Welcome to our restaurant finder service!")
@@ -65,8 +62,11 @@ user_food_pref = input("What type of food do you fancy today ?\n")
 valid_food_pref = handle_input_and_choices(user_food_pref, types)
 print("Got you! We're searching for {0} restaurants now... hang tight!".format(valid_food_pref))
 my_hash_table = store_data_in_hasmap(restaurant_data)
-print(my_hash_table.keys())
-if my_hash_table:
+if len(my_hash_table) ==1:
+    print("Here is the only option around for ", str(valid_food_pref), " food:")
     display_results(valid_food_pref, my_hash_table)
+elif len(my_hash_table) > 1:
+    print("Here are the options you can consider for ", str(valid_food_pref), " food:")
+    display_results(valid_food_pref, my_hash_table)    
 else:
     print("No restaurant matching your criteria unfortunately, please try another cuisine!")
