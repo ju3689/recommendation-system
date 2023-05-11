@@ -41,7 +41,7 @@ def handle_input_and_choices(food_pref, list_options):
 
     return food_pref
 
-def store_data_in_hasmap(table_data):
+def store_data_in_hasmap(table_data, food_pref):
     my_hash_map = {}
     for item in table_data:
         cuisine = item[0]
@@ -50,13 +50,13 @@ def store_data_in_hasmap(table_data):
         rating_rest = item[3]
         address_rest = item[4]
         my_hash_map[rest_name] = [cuisine, price_rest, rating_rest, address_rest]
-    return my_hash_map
-    # print(my_hash_map.keys())
-
-def display_results(food_pref, hash_map):
     shortlist_rest = {}
-    shortlist_rest = {k: v for k, v in hash_map.items() if v[0] == food_pref}
-    print(food_pref, " has ", len(shortlist_rest), " restaurant entries matching")
+    shortlist_rest = {k: v for k, v in my_hash_map.items() if v[0] == food_pref}
+    
+    return shortlist_rest
+
+def display_results(shortlist_rest):
+    # print(food_pref, " has ", len(shortlist_rest), " restaurant entries matching")
     for k, v in shortlist_rest.items():
         print("---------------\n")
         print("Restaurant name: {0} \n".format(str(k)))
@@ -69,13 +69,14 @@ print("Welcome to our restaurant finder service!")
 user_food_pref = input("What type of food do you fancy today ?\n")
 valid_food_pref = handle_input_and_choices(user_food_pref, types)
 print("Got you! We're searching for {0} restaurants now... hang tight!".format(valid_food_pref))
-my_hash_table = store_data_in_hasmap(restaurant_data)
+my_hash_table = store_data_in_hasmap(restaurant_data, valid_food_pref)
+
 
 if len(my_hash_table) ==1:
     print("Here is the only option around for ", str(valid_food_pref), " food:\n")
-    display_results(valid_food_pref, my_hash_table)
+    display_results(my_hash_table)
 elif len(my_hash_table) > 1:
     print("Here are the options you can consider for ", str(valid_food_pref), " food:\n")
-    display_results(valid_food_pref, my_hash_table)    
+    display_results(my_hash_table)    
 else:
     print("No restaurant matching your criteria unfortunately, please try another cuisine!")
