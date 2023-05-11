@@ -55,7 +55,12 @@ def store_data_in_hasmap(table_data):
 def display_results(food_pref, hash_map):
     shortlist_rest = {}
     shortlist_rest = {k: v for k, v in hash_map.items() if v[0] == food_pref}
-    print(shortlist_rest.keys())
+    for k, v in shortlist_rest.items():
+        print("Restaurant name: {0} \n".format(str(k)))
+        print("Price: {0} \n".format(str(v[2])))
+        print("Rating: {0} \n".format(str(v[3])))
+        print("---------------\n")
+
 
 print("Welcome to our restaurant finder service!")
 user_food_pref = input("What type of food do you fancy today ?\n")
