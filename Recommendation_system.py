@@ -69,6 +69,7 @@ user_food_pref = input("What type of food do you fancy today ?\n")
 valid_food_pref = handle_input_and_choices(user_food_pref, types)
 print("Got you! We're searching for {0} restaurants now... hang tight!".format(valid_food_pref))
 my_hash_table = store_data_in_hasmap(restaurant_data)
+print(len(my_hash_table))
 if len(my_hash_table) ==1:
     print("Here is the only option around for ", str(valid_food_pref), " food:\n")
     display_results(valid_food_pref, my_hash_table)
