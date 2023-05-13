@@ -52,7 +52,6 @@ restaurant_data = [['german', "Esther's German Saloon", '3', '3', '22 Teutonic A
                    ['mexican', 'El Jalapeño', '4', '3', '18 Salsa Street'],
                    ['indian', 'Spice Junction', '4', '3', '24 Masala Road'],
                    ['cafe', 'Mellow Brew', '5', '2', '9 Coffee Lane'],
-                   ['pizza', 'Papa's Pizzeria', '5', '2', '15 Pepperoni Avenue'],
                    ['italian', 'Bella Italia', '4', '3', '21 Pasta Place'],
                    ['finnish', 'Nordic Delights', '3', '3', '33 Helsinki Street'],
                    ['south korean', 'Seoul Kitchen', '4', '4', '7 Gangnam Boulevard'],
@@ -61,7 +60,6 @@ restaurant_data = [['german', "Esther's German Saloon", '3', '3', '22 Teutonic A
                    ['vietnamese', 'Saigon Street', '5', '4', '6 Pho Lane'],
                    ['austrian', 'Vienna Cafe', '4', '3', '17 Strauss Street'],
                    ['australian', 'Down Under Grill', '4', '4', '23 Kangaroo Road'],
-                   ['german', 'Heidi's Bavarian Kitchen', '4', '3', '40 Alpine Avenue'],
                    ['japanese', 'Sushi Paradise', '5', '4', '11 Sakura Lane'],
                    ['vegetarian', 'Fresh Greens', '4', '2', '19 Veggie Street'],
                    ['french', 'La Belle Epoque', '5', '4', '25 Avenue des Champs-Elysees'],
@@ -71,5 +69,6 @@ restaurant_data = [['german', "Esther's German Saloon", '3', '3', '22 Teutonic A
                    ['czech', 'Prague Tavern', '4', '3', '9 Czechia Square'],
                    ['chinese', 'Lucky Panda', '4', '3', '45 Dragon Street'],
                    ['thai', 'Siam Palace', '5', '4', '14 Tom Yum Road'],
-                   ['mexican', 'El Mariachi', '4', '3', '20 Salsa Avenue']]
+                   ['mexican', 'El Mariachi', '4', '3', '20 Salsa Avenue'],
+                   ['indian', 'Curry House', '4', '3', '26 Spice Street']]
 
