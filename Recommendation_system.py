@@ -1,4 +1,6 @@
-from restaurantData import types, restaurant_data
+from restaurantData import restaurant_data, continents_and_regions, types
+from Tree_and_methods import Tree, bfs
+from tree_builder import build_tree_structure
 
 #autocomplete function that will take a user input and try to match it to an existing cuisine
 def autocomplete_list(food_pref, list_options):
@@ -64,14 +66,25 @@ print("Welcome to our restaurant finder service!")
 user_food_pref = input("What type of food do you fancy today ?\n")
 valid_food_pref = handle_input_and_choices(user_food_pref, types)
 print("Got you! We're searching for {0} restaurants now... hang tight!".format(valid_food_pref))
-my_hash_table = store_data_in_hasmap(restaurant_data, valid_food_pref)
+
+#phase 2: call API
+
+#create Tree made of continent, regions and LinkedList or dictionaries
+rest_tree = build_tree_structure(continents_and_regions, restaurant_data)
+
+#call bfs on the valid food pref and contient as target value with the parent node
+#call bfs on the valid food pref and region as target value with the node of the contient
+
+#display results
+
+#my_hash_table = store_data_in_hasmap(restaurant_data, valid_food_pref)
 
 
-if len(my_hash_table) ==1:
-    print("Here is the only option around for ", str(valid_food_pref), " food:\n")
-    display_results(my_hash_table)
-elif len(my_hash_table) > 1:
-    print("Here are the options you can consider for ", str(valid_food_pref), " food:\n")
-    display_results(my_hash_table)    
-else:
-    print("No restaurant matching your criteria unfortunately, please try another cuisine!")
+# if len(my_hash_table) ==1:
+#     print("Here is the only option around for ", str(valid_food_pref), " food:\n")
+#     display_results(my_hash_table)
+# elif len(my_hash_table) > 1:
+#     print("Here are the options you can consider for ", str(valid_food_pref), " food:\n")
+#     display_results(my_hash_table)    
+# else:
+#     print("No restaurant matching your criteria unfortunately, please try another cuisine!")
